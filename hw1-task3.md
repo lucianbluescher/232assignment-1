@@ -32,7 +32,7 @@ Explain whether each scenario is a **classification or regression** problem, and
 
 > **Your Answer:**
 >
-> This would be a *regression scenario* because we are *predicting* a continuous numerical variable. n = 52 weeks, p = 5.
+> This would be a *regression scenario* because we are *predicting* a continuous numerical variable. n = 52 weeks, p = 4.
 
 ------------------------------------------------------------------------
 
@@ -43,6 +43,12 @@ What are the advantages and disadvantages of a very flexible (versus a a less fl
 > **Your Answer:**
 >
 > A more flexible approach (more predictors) will have higher variance (disadvantage) resulting in a less accurate prediction but lower bias (advantage) resulting in a more confidence in the predictor effect. A more flexible approach is preferred when the real-life problem has many factors so you need to make more assumptions to approximate the true shape of F. A less flexible approach would be preferred when your confident there aren't as many predictors so your not worried about bias and want an accurate prediction. Ultimately, to minimize the test MSE you want to find a method that minimizes both variance and bias.
+>
+> For inference, a less flexible approach is preferred because it provides clear, interpretable relationships between predictors. For prediction, a more flexible approach is better because it can capture complex patterns to minimize error, as long as it doesn't overfit.
+>
+> A flexible approach can lead to better predictions by reducing bias, but it risks being less accurate if high variance causes more noise. The goal is to balance these to minimize the overall test MSE.
+>
+> A large training set allows for a more flexible approach because there is enough data to support complex shapes. Conversely, a small training set requires a less flexible approach to prevent the model from overfitting to a limited number of points.
 
 ------------------------------------------------------------------------
 
@@ -52,4 +58,4 @@ Describe the differences between a **parametric** and a **non-parametric** stati
 
 > **Your Answer:**
 >
-> A parametric approach has a functional form for how variables are related and a non-parametric approach does not. The parametric approach advantages are that in can be used with small training sets and is computationally easier to estimate but the predictions will not be as good because you are making assumptions.
+> A parametric approach has a functional form for how variables are related and a non-parametric approach does not. The parametric approach advantages are that it can be used with small training sets and is computationally easier to estimate. Since you are only estimating a few fixed parameters, the model is simpler to interpret and requires less data to reach a good conclusion. The disadvantage is that your predictions will not be as good if your assumptions are wrong. If the functional form you pick is far from the true $f$, the model will suffer from high bias and will be too rigid to capture the actual patterns in the data. This mismatch leads to underfitting, where the model ignores the complexities of the real-world problem because it is forced to follow a pre-defined shape.
